@@ -1,9 +1,9 @@
 import {NextApiRequest, NextApiResponse} from 'next'
 import sqlite from 'sqlite'
 
-export default async function getPeople(req: NextApiRequest, res: NextApiResponse){
+export default async function getAllVehicle(req: NextApiRequest, res: NextApiResponse){
   const db = await sqlite.open('./mydb.sqlite')
-  const people = await db.all('select * from vehicle')
+  const vehicle = await db.all('select * from vehicle')
 
-  res.json( people )
+  res.json( vehicle )
 }
